@@ -28,19 +28,38 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import AdminLayout from "layouts/Admin.js";
 import CustomizeAvatar from "views/CustomizeAvatar";
+import Landing from "layouts/Landing";
+import Login from "views/Login";
+import RegisterAttendee from "views/RegisterAttendee";
+import RegisterOwner from "views/RegisterOwner";
+import RegisterAdmin from "views/RegisterAdmin";
+import RegisterExhibitor from "views/RegisterExhibitor";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <BrowserRouter>
     <Switch>
+    <Route exact path='/home' component={Landing}/>
+      <Route exact path='/login' component={Login}/>
+      <Route exact path='/registerAttendee' component={RegisterAttendee}/>
+      <Route exact path='/registerOwner' component={RegisterOwner}/>
       <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
+
+      <Route  
+      path='/registerAdmin' 
+      render={(props) => <RegisterAdmin {...props} />} />
+      
+      <Route  
+      path='/registerExhibitor' 
+      render={(props) => <RegisterExhibitor {...props} />} />
 
       <Route
         path="/customize-avatar"
         render={(props) => <CustomizeAvatar {...props} />}
       />
 
-      <Redirect from="/" to="/admin/dashboard" />
+      <Redirect from="/" to="/home" />
     </Switch>
   </BrowserRouter>
 );
