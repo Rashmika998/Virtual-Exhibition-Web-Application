@@ -1,8 +1,15 @@
 # Introduction
-Brief intro about the use case and its functionalities.
+Nerambum is an innovative virtual exhibition platform that recreates a real-life exhibition experience in a digital space.This microservices based web application is primarily designed for managing virtual exhibitions on the Nerambum platform. It provides a suite of tools and features for exhibition owners, exhibitors, and attendees to create and participate in immersive and interactive virtual exhibitions.  
 
+The application has several core functionalities, including the ability to create and manage exhibitions, customize virtual stalls, create and manage attendee avatars, manage tickets and payments, and provide live streaming capabilities. The application also includes a feedback service to collect attendee feedback and a statistics service to track attendance and engagement.  
+
+Exhibition owners can use the web application to create and manage exhibitions, and allocate stalls to exhibitors. Exhibitors, in turn, can use this application to select and purchase their preferred stall tier, customize their virtual stalls with branding and marketing materials, and interact with attendees in real-time through live streaming. Attendees can create and customize their own avatars, and buy tickets with the web application.  
+
+Overall, the web application is an essential tool for managing virtual exhibitions on the Nerambum platform, providing a seamless and immersive experience for all stakeholders involved.
 # Architecture
-Include an architectural diagram
+The architecture of the application is depicted in the following figure.
+
+![picture alt](http://via.placeholder.com/200x150)
 
 Design decisions taken to split into services
 
@@ -10,7 +17,17 @@ Design decisions taken to split into services
 The implementation methods used (Netflix software stack)
 
 ## Core services
-Describe about each microservice and its functionality for the system.
+Our system consists of 9 core services, each with its own database.  
+* Auth Service - Manages user accounts, credentials, and access control.  
+* Exhibition Service - Allows the creation, management, and hosting of exhibitions.  
+* Stall Customization Service - Enables exhibitors to purchase and customize virtual exhibition stalls.   
+* Avatar Service - Allows attendeed to create and customize their avatars.  
+* Ticket Service - Manages virtual exhibition tickets, including creation, pricing, and allocation.  
+* Payment Service - Securely processes payments, integrating with payment gateways to allow attendees to purchase tickets and stall owners to buy stalls.  
+* Agora Token Server Service - Generates tokens to authenticate and authorize users for live streaming sessions.  
+* Feedback Service - Collects and retrieves user feedback.  
+* Stats Service -  Handles attendance statistics, providing exhibition owners with an overview of their exhibition. 
+
 
 The REST API exposed by the microservice
 
@@ -20,7 +37,7 @@ Inter-service interactions happened via the micro-service
 Include the configurations in API gateway.
 
 # User Interface
-Implementation details of the UI
+The front-end user interface of the Nerambum web application was developed using React.
 
 How you used the API testing tools
 
